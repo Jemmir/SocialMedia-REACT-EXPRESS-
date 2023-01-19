@@ -21,7 +21,7 @@ const app = express();
 const server = http.createServer(app)
 export const io = new SocketServer(server, {
   cors:{
-    origin: "http://localhost:3000"
+    origin: process.env.LINK
   }
 })
 mongoose.set("strictQuery", true).connect(process.env.MONGO_URI)
