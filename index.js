@@ -21,10 +21,10 @@ const app = express();
 const server = http.createServer(app)
 export const io = new SocketServer(server, {
   cors:{
-    origin: process.env.LINK
+    origin: "https://lovely-kataifi-403f8b.netlify.app"
   }
 })
-mongoose.set("strictQuery", true).connect(process.env.MONGO_URI)
+mongoose.set("strictQuery", true).connect("mongodb+srv://jemmmir:RgAvzAt4nTXwutmL@cluster0.utu1tmg.mongodb.net/MERNSOCIALMEDIA")
 .then(() => console.log("Conectado a la db"))
 .catch(e => console.log("Error " + e ));
 
@@ -98,7 +98,7 @@ io.on("connection", (socket) => {
 
 const corsOptions = {
   credentials: true,
-  origin: process.env.LINK || "*",
+  origin: "https://lovely-kataifi-403f8b.netlify.app" || "*",
   methods: ["GET", "POST", "PUT", "DELETE"]
 }
 
