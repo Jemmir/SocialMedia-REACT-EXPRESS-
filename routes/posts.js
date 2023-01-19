@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 import { Post } from "../models/Post.js";
-import { User } from "../models/user.js";
+import { User } from "../models/User.js";
 
 
 
