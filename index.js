@@ -75,11 +75,12 @@ io.on("connection", (socket) => {
   //send and get message
   socket.on("sendMessage", ({ senderUsername, receiverUsername, text }) => {
     const user = getUser(receiverUsername);
-    
+    if(user !== undefined){
     io.to(user.socketId).emit("getMessage", {
       senderUsername,
       text,
     });
+  }
   });
 
    //when disconnect
